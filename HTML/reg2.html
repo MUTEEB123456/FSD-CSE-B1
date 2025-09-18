@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>REGISTRATION FORM</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: linear-gradient(135deg, #74ebd5, #ACB6E5);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+    }
+
+    .form-container {
+      background: #fff;
+      padding: 30px 40px;
+      border-radius: 15px;
+      box-shadow: 0 8px 15px rgba(0,0,0,0.2);
+      width: 400px;
+      animation: fadeIn 1s ease-in-out;
+    }
+
+    h1 {
+      text-align: center;
+      color: #333;
+      margin-bottom: 20px;
+    }
+
+    label {
+      display: block;
+      margin: 10px 0 5px;
+      font-weight: bold;
+      color: #444;
+    }
+
+    input[type="text"],
+    input[type="number"],
+    input[type="date"],
+    input[type="file"],
+    select,
+    textarea {
+      width: 100%;
+      padding: 10px;
+      border-radius: 8px;
+      border: 1px solid #ccc;
+      outline: none;
+      transition: 0.3s;
+    }
+
+    input:focus, select:focus, textarea:focus {
+      border-color: #74ebd5;
+      box-shadow: 0 0 5px rgba(116,235,213,0.7);
+    }
+
+    .gender-group {
+      display: flex;
+      gap: 15px;
+      margin: 5px 0 15px;
+    }
+
+    input[type="radio"] {
+      margin-right: 5px;
+    }
+
+    textarea {
+      resize: none;
+    }
+
+    input[type="submit"] {
+      width: 100%;
+      padding: 12px;
+      background: linear-gradient(135deg, #74ebd5, #ACB6E5);
+      border: none;
+      border-radius: 10px;
+      font-size: 16px;
+      font-weight: bold;
+      color: white;
+      cursor: pointer;
+      margin-top: 15px;
+      transition: transform 0.2s ease, background 0.3s;
+    }
+
+    input[type="submit"]:hover {
+      transform: scale(1.05);
+      background: linear-gradient(135deg, #6dd5ed, #2193b0);
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(-20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+  </style>
+</head>
+<body>
+  <div class="form-container">
+    <h1>REGISTER HERE</h1>
+    <form name="register" method="post" action="#">
+      
+      <label for="name">Name</label>
+      <input type="text" name="name" placeholder="Enter your Name">
+
+      <label for="mobile">Mobile No</label>
+      <input type="number" name="mobile" placeholder="Enter your Mobile Number">
+
+      <label for="dob">DOB</label>
+      <input type="date" name="dob">
+
+      <label for="gender">Gender</label>
+      <div class="gender-group">
+        <label><input type="radio" name="gender" value="M" checked> Male</label>
+        <label><input type="radio" name="gender" value="F"> Female</label>
+      </div>
+
+      <label for="branch">Branch</label>
+      <select name="branch">
+        <option value="CSE">CSE</option>
+        <option value="AIML">AIML</option>
+        <option value="CSDS">CSDS</option>
+        <option value="ECE">ECE</option>
+        <option value="ME">MECHANICAL</option>
+      </select>
+
+      <label for="address">Address</label>
+      <textarea id="address" name="address" rows="3" cols="30" placeholder="Enter Current Address"></textarea>
+
+      <label for="certificate">Upload Class 12 Certificate</label>
+      <input type="file" id="certificate" name="certificate" accept=".pdf,.jpg,.png,.jpeg"/>
+
+      <input type="submit" value="Submit">
+    </form>
+  </div>
+</body>
+</html>
