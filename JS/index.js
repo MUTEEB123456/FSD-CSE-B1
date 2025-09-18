@@ -1,36 +1,41 @@
-function waitfortwoseconds()
-{
-    const ms=new Date().getTime()+2000;
-    while(new Date().getTime()<ms);
+function waitForTwoSeconds() {
+  return new Promise(resolve => {
+    setTimeout(resolve, 2000); 
+  });
 }
-function register()
-{
-    waitfortwoseconds();
-    console.log("register end");
+
+async function register() {
+  await waitForTwoSeconds();
+  console.log("register end");
 }
-function sendemail()
-{
-    waitfortwoseconds();
-    console.log("email end");
+
+async function sendEmail() {
+  await waitForTwoSeconds();
+  console.log("email end");
 }
-function login()
-{
-    waitfortwoseconds();
-    console.log(" login end");
+
+async function login() {
+  await waitForTwoSeconds();
+  console.log("login end");
 }
-function getData()
-{
-    waitfortwoseconds();
-    console.log("data end");
+
+async function getData() {
+  await waitForTwoSeconds();
+  console.log("data end");
 }
-function displayData()
-{
-    waitfortwoseconds();
-    console.log("Display end");
+
+async function displayData() {
+  await waitForTwoSeconds();
+  console.log("Display end");
 }
-register();
-sendemail();
-login();
-getData();
-displayData();
-console.log("other Application")
+
+async function main() {
+  await register();
+  await sendEmail();
+  await login();
+  await getData();
+  await displayData();
+  console.log("other Application");
+}
+
+main();
